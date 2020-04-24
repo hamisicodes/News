@@ -1,5 +1,6 @@
 class Config:
-    pass
+
+    NEWS_API_BASE_URL  = 'https://newsapi.org/v2/{}?apiKey={}'
 
 
 class ProdConfig(Config):
