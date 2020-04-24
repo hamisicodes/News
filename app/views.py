@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template
-from requests import get_sources
+from .requests import get_sources
 
 @app.route('/')
 def index():

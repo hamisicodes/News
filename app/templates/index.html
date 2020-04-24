@@ -1,1 +1,8 @@
-<h1> Hello World!!</h1>
+{% import 'macros.html' as macro %}
+
+<body>
+
+    <h3>Sports sources</h3>
+    <ul>{{ macro.displaySources(sports_sources) }}</ul>
+    
+</body>

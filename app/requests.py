@@ -1,5 +1,5 @@
 from app import app
-import urllib,requests,json
+import urllib.request,json
 from .models import source
 
 Source = source.Source
@@ -14,7 +14,7 @@ def get_sources(category):
         url_response = url.read()
         new_url_response = json.loads(url_response)
 
-        sources_list_of_obj
+        sources_list_of_obj = None
 
         if new_url_response['sources']:
             sources_list_of_dicts   =  new_url_response['sources']  #returns a list of dictionaries 
