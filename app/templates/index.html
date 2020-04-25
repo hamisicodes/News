@@ -1,25 +1,26 @@
 {% import 'macros.html' as macro %}
+{% extends 'base.html' %}
 
-<body>
 
-   
-    <h3>Sports sources</h3>
-    <ul>{{ macro.displaySources(sports_sources) }}</ul>
-    
-    <h3>Business sources</h3>
-    <ul>{{ macro.displaySources(business_sources) }}</ul>
-    
-    <h3>Technology sources</h3>
-    <ul>{{ macro.displaySources(technology_sources) }}</ul>
-    
-    <h3>Science sources</h3>
-    <ul>{{ macro.displaySources(science_sources) }}</ul>
+<div class="container">
 
-    <h3>Entertainment Sources</h3>
-    <ul>{{ macro.displaySources(general_sources) }}</ul>
+    {% block content %}
 
-    <h3>General Sources</h3>
-    <ul>{{ macro.displaySources(general_sources) }}</ul>
-    
-    
-</body>
+    <h2 class="text-center">Sports sources</h2>
+    <hr>
+    {{ macro.displaySources(sports_sources) }}
+
+    <h2 class="text-center">Business sources</h2>
+    <hr>
+    {{ macro.displaySources(business_sources) }}
+
+    <h2 class="text-center">Technology sources</h2>
+    <hr>
+    {{ macro.displaySources(technology_sources) }}
+
+    <h2 class="text-center">General sources</h2>
+    <hr>
+    {{ macro.displaySources(general_sources) }}
+
+</div>
+{% endblock %}
