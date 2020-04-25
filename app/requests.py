@@ -1,11 +1,13 @@
 from app import app
 import urllib.request,json
-from .models import source
+from .models import source,article
 
 Source = source.Source
+Article = article.Article
 
 api_key = app.config['NEWS_API_KEY']
 base_url = app.config['NEWS_API_BASE_URL']
+article_url = 'http://newsapi.org/v2/everything?language=english&sources={}&apiKey={}''
 
 def get_sources(category):
     url_format = base_url.format(category,api_key)
@@ -37,5 +39,8 @@ def process(list_of_dicts):   # function that processes a list of dictionaries c
        sources_list.append(new_source)
 
     return sources_list
+
+def get_articles(source_name):
+    
 
 

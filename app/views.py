@@ -11,3 +11,5 @@ def index():
     technology_sources = get_sources('technology')
     entertainment_sources = get_sources('entertainment')
     return render_template('index.html' , sports_sources = sports_sources , general_sources = general_sources , science_sources = science_sources , business_sources = business_sources, technology_sources = technology_sources)
+
+
