@@ -13,3 +13,7 @@ def index():
     return render_template('index.html' , sports_sources = sports_sources , general_sources = general_sources , science_sources = science_sources , business_sources = business_sources, technology_sources = technology_sources)
 
 
+app.route('/sources/source_name')
+def articles(source_name):
+    source_articles = get_articles(source_name)
+    return render_template('articles.html', articles = source_articles)
