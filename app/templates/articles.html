@@ -35,12 +35,11 @@
                 {% for row in articles | batch(4) %}
                 <div class="card col-md-4" style="width: 18rem;">
                         {% for article in row %}
-                        <img class="card-img-top" src="..." alt="image for article">
+                        <img class="card-img-top img-fluid" src={{article.image}} alt="image for article">
                         <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the
-                                        bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <h5 class="card-title">{{article.title}}</h5>
+                                <p class="card-text">{{article.description}}</p>
+                                <a href={{article.url}} class="btn btn-primary">Visit article</a>
                         </div>
                         {% endfor %}
                 </div>
