@@ -1,0 +1,56 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Flasky{% endblock %}
+
+{% block navbar %}
+<div class="navbar navbar-inverse" role="navigation">
+        <div class="container">
+                <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">Flasky</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                                <li><a href="/">Home</a></li>
+                        </ul>
+                </div>
+        </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+        <div class="page-header">
+                <h1>Articles from {{ name }}</h1>
+        </div>
+
+
+        <div class="row">
+                {% for row in articles | batch(4) %}
+                <div class="card col-md-4" style="width: 18rem;">
+                        {% for article in row %}
+                        <img class="card-img-top" src="..." alt="image for article">
+                        <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                        bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        {% endfor %}
+                </div>
+                
+                {% endfor %}
+        </div>
+
+
+
+
+
+</div>
+{% endblock %}

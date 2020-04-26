@@ -40,12 +40,12 @@ def process(list_of_dicts):   # function that processes a list of dictionaries c
 
     return sources_list
 
-def get_articles(source_name): #searches the articles by name of a particular source
-    url_format = article_url.format(source_name,api_key)
+def get_articles(id): #searches the articles by id of a particular source
+    url_format = article_url.format(id,api_key)
     
     with urllib.request.urlopen(url_format) as url:
          url_response  = url.read()
-         response_format = json.load(url_response)
+         response_format = json.loads(url_response)
 
          articles_list_of_obj = None
 
@@ -61,19 +61,19 @@ def process_results(list_of_dicts):   # function that processes a list of dictio
     articles_list = []
 
     for item in list_of_dicts:
+
        id    = item.get('id')
        author  = item.get('author')
        description  = item.get('description')
        title   = item.get('title')
-       image   = item.get('urlToImage')
-
-       if image:
-           new_article = Article(id,author,title,description,image)
-           articles_list.append(new_source)
-           
-
+       image  = item.get('urlToImage')
+       url = item.get('url')
+       timeOfPublish = item.get('"publishedAt')
        
        
+       new_article = Article(id,author,title,description,image , url, timeOfPublish)
+       articles_list.append(new_article)
+
 
     return articles_list
 
