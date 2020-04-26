@@ -1,23 +1,31 @@
 {% extends 'base.html' %}
 {% macro display_articles(articles) %}
-<div class="container-fluid articles">
-    <div>
-        <br><br>
-    </div>
-    <div class="jumbotron hjumbo">
-        <div class="overlay">
-            <h1 class="text-white txt">{{source}} Articles</h1>
-        </div>
-    </div>
-    <div class="card-columns">
-        {% for article in articles %}
-        <div class="card">
-            <img src="{{article.urlToImage}}" alt="" class="card-img-top">
-            <div class="card-body">
-                <p>{{article.description}}</p>
-                <p><br>{{ article.author}}</p>
+
+<div class="container">
+    <div class="row">
+        {% for row in articles | batch(4) %}
+    
+        <div class="col-md-4">
+            {% for article in row %}
+            <div class="card text-center text-white bg-light mb-3" style="width: 15vw; height:40rem;">
+                <div class="card-header"></div>
+                <h3 class="card-title">{{ article.title | title }}</h5>
+                <br>
+                <div class="card-body">
+                    <p class="card-text">{{ article.description|truncate(100) }}</p>
+                    <a href = "{{ article.url }}" class = "btn btn-primary">check articles</a>
+                    <p class="card-text"><small class="text-muted">published on {{ article.timeOfPublish}}</small></p>
+                </div>
             </div>
+            <br>
+            {% endfor %}
+    
         </div>
+    
         {% endfor %}
     </div>
 </div>
+
+
+
+{% endmacro %}

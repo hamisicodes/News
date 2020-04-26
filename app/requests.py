@@ -68,7 +68,7 @@ def process_results(list_of_dicts):   # function that processes a list of dictio
        title   = item.get('title')
        image  = item.get('urlToImage')
        url = item.get('url')
-       timeOfPublish = item.get('"publishedAt')
+       timeOfPublish = item.get('publishedAt')
        
        
        new_article = Article(id,author,title,description,image , url, timeOfPublish)

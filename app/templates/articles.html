@@ -1,4 +1,5 @@
 {% extends 'bootstrap/base.html' %}
+{%  from 'articles_macro.html' import display_articles %}
 
 {% block title %}Flasky{% endblock %}
 
@@ -24,39 +25,15 @@
 </div>
 {% endblock %}
 
-{% block content %}
 <div class="container">
-        <div class="page-header">
-                <h1>Articles from {{ name }}</h1>
-        </div>
-
-
-        <div class="row">
-                {% for row in articles | batch(4) %}
-                <div class="col-md-4">
-                        {% for article in row %}
-
-                        <div class="card" style="width: 25rem; height:20rem;">
-
-                                <img class="card-img-top img-fluid" src={{article.image}} alt="image for article" ">
-                                <div class=" card-body">
-                                <h5 class="card-title">{{article.title}}</h5>
-                                <p class="card-text">{{article.description}}</p>
-                                <a href={{article.url}} class="btn btn-primary">Visit article</a>
-                        </div>
-                       
-                        {% endfor %}
-                </div>
-
-                {% endfor %}
-
-        </div>
-
+        
+{% block content %}
+<div class="page-header">
+        <h3 class="text-center">Sources from {{ name }}!</h3>
 </div>
 
 
-
-
+<div>{{ display_articles(articles) }}</div>
 
 </div>
 {% endblock %}
