@@ -9,3 +9,6 @@ A web application that will help users list and preview news articles from vario
 1. A user would want to click on an article and read the full article on the source website.
 ### Developer's contact
 >ngaohamisi@gmail.com
+### License
+MIT @hamisi
+
