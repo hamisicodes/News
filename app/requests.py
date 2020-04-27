@@ -7,7 +7,7 @@ Article = article.Article
 
 api_key = app.config['NEWS_API_KEY']
 base_url = app.config['NEWS_API_BASE_URL']
-article_url = 'http://newsapi.org/v2/everything?sources={}&apiKey={}'
+article_url = app.config['ARTICLE_URL']
 
 def get_sources(category):
     url_format = base_url.format(category,api_key)
