@@ -18,5 +18,3 @@ class testSource(unittest.TestCase):
         self.assertEqual(self.new_source.url,"www.kenyanews.com")
 
 
-if __name__ == '__main__':
-    unittest.main()
