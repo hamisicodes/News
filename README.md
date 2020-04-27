@@ -1,5 +1,5 @@
 ### News
-A web application that will help users list and preview news articles from various sources using the NEWS API
+>A web application that will help users list and preview news articles from various sources using the NEWS API
 ### Technologies used
 >Python , Flask
 ### User stories
@@ -10,5 +10,5 @@ A web application that will help users list and preview news articles from vario
 ### Developer's contact
 >ngaohamisi@gmail.com
 ### License
-MIT @hamisi
+>MIT @hamisi
 
