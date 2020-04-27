@@ -3,7 +3,7 @@ from . import main
 from ..requests import get_sources,get_articles
 
 @main.route('/')
-def index():
+url_for('.index'):
     general_sources = get_sources('general')
     sports_sources = get_sources('sports')
     science_sources = get_sources('science')
@@ -14,6 +14,6 @@ def index():
 
 
 @main.route('/source/<id>')
-def sources(id):
+url_for('.souces'):
     articles = get_articles(id)
     return render_template('articles.html' , name = id , articles = articles)
