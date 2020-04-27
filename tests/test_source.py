@@ -1,8 +1,8 @@
 import unittest
-from  .models import source
+from  app.models import Source
 
 
-Source  = source.Source
+
 
 class testSource(unittest.TestCase):
     def setUp(self):
